@@ -1,0 +1,345 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 10,
+    "passes": 3,
+    "pending": 0,
+    "failures": 7,
+    "start": "2021-04-28T20:30:18.720Z",
+    "end": "2021-04-28T20:30:31.744Z",
+    "duration": 13024,
+    "testsRegistered": 10,
+    "passPercent": 30,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "passPercentClass": "danger",
+    "pendingPercentClass": "danger"
+  },
+  "suites": {
+    "uuid": "085a7037-7385-45d4-b267-635da73be69c",
+    "title": "",
+    "fullFile": "",
+    "file": "",
+    "beforeHooks": [],
+    "afterHooks": [],
+    "tests": [],
+    "suites": [
+      {
+        "uuid": "aefb261a-1e4f-492f-885e-583b9cc70333",
+        "title": "Login Test",
+        "fullFile": "/Users/hatemrmili/Downloads/todoapp-test-automation/test/loginPage.test.js",
+        "file": "/test/loginPage.test.js",
+        "beforeHooks": [
+          {
+            "title": "\"before all\" hook",
+            "fullTitle": "Login Test \"before all\" hook",
+            "timedOut": false,
+            "duration": 5760,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "driver = DriverManager.buildDriver();\nloginPage = new LoginPage(driver);\ntaskPage = new TaskPage(driver);\nawait loginPage.visit(baseUrl);\nawait loginPage.openApp();",
+            "err": {},
+            "isRoot": false,
+            "uuid": "225a3f80-6c21-44de-9a2c-27b2c8df38b6",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [
+          {
+            "title": "\"after all\" hook",
+            "fullTitle": "Login Test \"after all\" hook",
+            "timedOut": false,
+            "duration": 66,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "await loginPage.quit();",
+            "err": {},
+            "isRoot": false,
+            "uuid": "32c189cb-6d9c-4059-9190-ff224c29cb09",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "tests": [
+          {
+            "title": "Vérifier que le bouton de connexion n'est pas activé lorsque les champs d'e-mail et de mot de passe sont vides",
+            "fullTitle": "Login Test Vérifier que le bouton de connexion n'est pas activé lorsque les champs d'e-mail et de mot de passe sont vides",
+            "timedOut": false,
+            "duration": 50,
+            "state": "failed",
+            "pass": false,
+            "fail": true,
+            "pending": false,
+            "code": "const result = await loginPage.signInButton();\nexpect(result.state).to.be.false;",
+            "err": {
+              "message": "AssertionError: expected true to be false",
+              "estack": "AssertionError: expected true to be false\n    at Context.<anonymous> (test/loginPage.test.js:30:35)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+              "diff": "- true\n+ false\n"
+            },
+            "isRoot": false,
+            "uuid": "ed0d7ee9-01d8-40f5-a21f-6bf439f9914d",
+            "isHook": false,
+            "skipped": false
+          },
+          {
+            "title": "Vérifier que les liens 'Tâches' et 'Déconnexion' ne sont pas visibles lorsque l'utilisateur n'est pas connecté",
+            "fullTitle": "Login Test Vérifier que les liens 'Tâches' et 'Déconnexion' ne sont pas visibles lorsque l'utilisateur n'est pas connecté",
+            "timedOut": false,
+            "duration": 70,
+            "state": "failed",
+            "pass": false,
+            "fail": true,
+            "pending": false,
+            "code": "const taskIsVisible = await taskPage.taskMenuLink();\nconst logoutIsVisible = await taskPage.logoutMenuLink();\nexpect(taskIsVisible).to.be.false;\nexpect(logoutIsVisible).to.be.false;",
+            "err": {
+              "message": "AssertionError: expected true to be false",
+              "estack": "AssertionError: expected true to be false\n    at Context.<anonymous> (test/loginPage.test.js:36:36)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+              "diff": "- true\n+ false\n"
+            },
+            "isRoot": false,
+            "uuid": "f6b1c892-da35-471b-8e80-96a39b1a9b84",
+            "isHook": false,
+            "skipped": false
+          },
+          {
+            "title": "Vérifier que le bouton de connexion n'est pas activé lorsque les champs d'e-mail et de mot de passe sont vides",
+            "fullTitle": "Login Test Vérifier que le bouton de connexion n'est pas activé lorsque les champs d'e-mail et de mot de passe sont vides",
+            "timedOut": false,
+            "duration": 28,
+            "state": "failed",
+            "pass": false,
+            "fail": true,
+            "pending": false,
+            "code": "const result = await loginPage.signInButton();\nexpect(result.state).to.be.false;",
+            "err": {
+              "message": "AssertionError: expected true to be false",
+              "estack": "AssertionError: expected true to be false\n    at Context.<anonymous> (test/loginPage.test.js:43:35)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+              "diff": "- true\n+ false\n"
+            },
+            "isRoot": false,
+            "uuid": "8e18f390-25cb-4e61-904b-20a5b79b4645",
+            "isHook": false,
+            "skipped": false
+          },
+          {
+            "title": "Vérifier que le message d'alerte rouge apparaît lorsque l'e-mail et/ou le mot de passe sont incorrects",
+            "fullTitle": "Login Test Vérifier que le message d'alerte rouge apparaît lorsque l'e-mail et/ou le mot de passe sont incorrects",
+            "timedOut": false,
+            "duration": 386,
+            "state": "passed",
+            "speed": "slow",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "let result = await loginPage.alertMessage();\nexpect(result.text).to.equal(alertMessageTxt);",
+            "err": {},
+            "isRoot": false,
+            "uuid": "b6d8220b-4605-4390-b3d6-330412bbd692",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [
+          "b6d8220b-4605-4390-b3d6-330412bbd692"
+        ],
+        "failures": [
+          "ed0d7ee9-01d8-40f5-a21f-6bf439f9914d",
+          "f6b1c892-da35-471b-8e80-96a39b1a9b84",
+          "8e18f390-25cb-4e61-904b-20a5b79b4645"
+        ],
+        "pending": [],
+        "skipped": [],
+        "duration": 534,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 50000
+      },
+      {
+        "uuid": "1bcd37d1-889c-40b5-b8ec-89a947b05171",
+        "title": "Task Test",
+        "fullFile": "/Users/hatemrmili/Downloads/todoapp-test-automation/test/taskPage.test.js",
+        "file": "/test/taskPage.test.js",
+        "beforeHooks": [
+          {
+            "title": "\"before all\" hook",
+            "fullTitle": "Task Test \"before all\" hook",
+            "timedOut": false,
+            "duration": 5505,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "driver = DriverManager.buildDriver();\nloginPage = new LoginPage(driver);\ntaskPage = new TaskPage(driver);\nawait loginPage.visit(baseUrl);\nawait loginPage.openApp();",
+            "err": {},
+            "isRoot": false,
+            "uuid": "a101ede5-a2bb-411b-843f-e86624b7b037",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [
+          {
+            "title": "\"after all\" hook",
+            "fullTitle": "Task Test \"after all\" hook",
+            "timedOut": false,
+            "duration": 156,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "await loginPage.quit();",
+            "err": {},
+            "isRoot": false,
+            "uuid": "e8b736d3-dc3a-417e-b8cc-1bddbc903763",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "tests": [
+          {
+            "title": "Cliquer sur le bouton de connexion et vérifiez l'URL",
+            "fullTitle": "Task Test Cliquer sur le bouton de connexion et vérifiez l'URL",
+            "timedOut": false,
+            "duration": 517,
+            "state": "passed",
+            "speed": "slow",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "const url = await loginPage.login();\nexpect(url).to.equal(taskUrl);",
+            "err": {},
+            "isRoot": false,
+            "uuid": "549b0568-5ec6-4e68-861d-a13afee83edb",
+            "isHook": false,
+            "skipped": false
+          },
+          {
+            "title": "Vérifier que les liens 'Tâches' et 'Déconnexion' sont visibles lorsque l'utilisateur est connecté",
+            "fullTitle": "Task Test Vérifier que les liens 'Tâches' et 'Déconnexion' sont visibles lorsque l'utilisateur est connecté",
+            "timedOut": false,
+            "duration": 64,
+            "state": "passed",
+            "speed": "medium",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "const taskIsVisible = await taskPage.taskMenuLink();\nconst logoutIsVisible = await taskPage.logoutMenuLink();\nexpect(taskIsVisible).to.be.true;\nexpect(logoutIsVisible).to.be.true;",
+            "err": {},
+            "isRoot": false,
+            "uuid": "a92d0810-d13e-4ed1-9681-7d6e2495a4b7",
+            "isHook": false,
+            "skipped": false
+          },
+          {
+            "title": "Vérifier que le bouton 'Ajouter la tâche' n'est pas activé lorsque les champs 'Nom de la tâche' et 'Description de la tâche en une ligne' sont vides",
+            "fullTitle": "Task Test Vérifier que le bouton 'Ajouter la tâche' n'est pas activé lorsque les champs 'Nom de la tâche' et 'Description de la tâche en une ligne' sont vides",
+            "timedOut": false,
+            "duration": 44,
+            "state": "failed",
+            "pass": false,
+            "fail": true,
+            "pending": false,
+            "code": "const result = await taskPage.addTaskButton();\nexpect(result.state).to.be.false;",
+            "err": {
+              "message": "AssertionError: expected true to be false",
+              "estack": "AssertionError: expected true to be false\n    at Context.<anonymous> (test/taskPage.test.js:42:35)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+              "diff": "- true\n+ false\n"
+            },
+            "isRoot": false,
+            "uuid": "eac45a4e-72d7-47c3-a695-801a4a3e1974",
+            "isHook": false,
+            "skipped": false
+          },
+          {
+            "title": "Vérifier que les données sont ajoutées dans le localStorage",
+            "fullTitle": "Task Test Vérifier que les données sont ajoutées dans le localStorage",
+            "timedOut": false,
+            "duration": 255,
+            "state": "failed",
+            "pass": false,
+            "fail": true,
+            "pending": false,
+            "code": "const data = await taskPage.addTask();\nexpect(data.name).to.be.true;\nexpect(data.description).to.be.true;",
+            "err": {
+              "message": "ReferenceError: changeStatus is not defined",
+              "estack": "ReferenceError: changeStatus is not defined\n    at TaskPage.addTask (pages/taskPage.js:72:56)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async Context.<anonymous> (test/taskPage.test.js:46:22)"
+            },
+            "isRoot": false,
+            "uuid": "3e03a302-c234-4f13-b507-33f6fdc1e2b3",
+            "isHook": false,
+            "skipped": false
+          },
+          {
+            "title": "Vérifier que l'état de la tâche est modifié dans le localStorage",
+            "fullTitle": "Task Test Vérifier que l'état de la tâche est modifié dans le localStorage",
+            "timedOut": false,
+            "duration": 60,
+            "state": "failed",
+            "pass": false,
+            "fail": true,
+            "pending": false,
+            "code": "const data = await taskPage.changeTaskStatus();\nexpect(data.completed).to.be.true;",
+            "err": {
+              "message": "AssertionError: expected undefined to be true",
+              "estack": "AssertionError: expected undefined to be true\n    at Context.<anonymous> (test/taskPage.test.js:54:37)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"
+            },
+            "isRoot": false,
+            "uuid": "1f1eb257-914c-4cb5-a642-2bddd60c3c4d",
+            "isHook": false,
+            "skipped": false
+          },
+          {
+            "title": "Vérifier que les données sont supprimées dans le localStorage",
+            "fullTitle": "Task Test Vérifier que les données sont supprimées dans le localStorage",
+            "timedOut": false,
+            "duration": 47,
+            "state": "failed",
+            "pass": false,
+            "fail": true,
+            "pending": false,
+            "code": "const data = await taskPage.deleteTask();\nexpect(data.name).to.be.true;\nexpect(data.description).to.be.true;",
+            "err": {
+              "message": "AssertionError: expected undefined to be true",
+              "estack": "AssertionError: expected undefined to be true\n    at Context.<anonymous> (test/taskPage.test.js:60:32)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"
+            },
+            "isRoot": false,
+            "uuid": "d31e5898-89d9-4ae7-b5ae-9240a65751ed",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [
+          "549b0568-5ec6-4e68-861d-a13afee83edb",
+          "a92d0810-d13e-4ed1-9681-7d6e2495a4b7"
+        ],
+        "failures": [
+          "eac45a4e-72d7-47c3-a695-801a4a3e1974",
+          "3e03a302-c234-4f13-b507-33f6fdc1e2b3",
+          "1f1eb257-914c-4cb5-a642-2bddd60c3c4d",
+          "d31e5898-89d9-4ae7-b5ae-9240a65751ed"
+        ],
+        "pending": [],
+        "skipped": [],
+        "duration": 987,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 50000
+      }
+    ],
+    "passes": [],
+    "failures": [],
+    "pending": [],
+    "skipped": [],
+    "duration": 0,
+    "root": true,
+    "rootEmpty": true,
+    "_timeout": 2000
+  },
+  "copyrightYear": 2021
+}
